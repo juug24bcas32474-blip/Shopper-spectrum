@@ -77,10 +77,10 @@ st.markdown("""
 @st.cache_data
 def load_data():
     try:
-        clean_df = pd.read_csv('online_retail_cleaned.csv')
+        clean_df = pd.read_csv('online_retail_cleaned_small.csv')
         clean_df['InvoiceDate'] = pd.to_datetime(clean_df['InvoiceDate'])
         rfm_df = pd.read_csv('customer_segments.csv')
-        similarity_df = pd.read_csv('product_similarity.csv', index_col=0)
+        similarity_df = pd.read_csv('product_similarity_small.csv', index_col=0)
         return clean_df, rfm_df, similarity_df
     except Exception:
         return None, None, None
